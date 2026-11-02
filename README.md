@@ -152,8 +152,8 @@ Instead:
 Also many parametric tests are fairly robust to moderate departures from normality. E.g. for t-tests or ANOVA:
 
 ```text
-n < 20    -> normality matters a lot
-20-50     -> check carefully
-> 50      -> usually not a major concern
-> 100     -> often largely irrelevant
+n < 20     ->  normality matters a lot
+  = 20-50  ->  check carefully
+  > 50     ->  usually not a major concern
+  > 100    ->  often largely irrelevant
 ```
