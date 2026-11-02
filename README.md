@@ -1,5 +1,10 @@
 # statistics_with_python
 
+## TODO:
+
+[ ] Create a notebook showing how Q-Q plot looks for various distributions.
+
+
 ## Inferencial statistics
 
 ### Typical workflow:
