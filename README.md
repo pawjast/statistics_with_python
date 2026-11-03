@@ -79,7 +79,7 @@ It's often an iterative process bewtween exploring the data, checking assumption
 
 ## Before analysis
 
-### Checking assumptions for normality
+### Checking assumptions of normality of data
 
 Many statistical tests assume the data is *normally* distributed.
 
@@ -89,39 +89,61 @@ These tests include:
 * ANOVA
 * Linear regression model residuals
 
-The common ways to check for normality are:
+The common ways to check the normality of data are:
 
 * To plot the histogram and KDE plot to check the distribution of the data
 * Plot the Q-Q plot
-* Run Shapiro-Wilk test
+* Run test:
+  * Shapiro-Wilk test
+  * Anderson-Darling test
+  * D'Agostino-Pearson test
 
 > H0: Data comes from a normal distribution  
-> H1: Data is not normally distributed
+> H1: Data does not come from a normal distribution
 
-We usually combine the plotting with the test.
+**❗Note:** It's a good practice to combine visual check with empirical test.
 
-Regarding the Shapiro-Wilk test:
+**Shapiro-Wilk test**
 
 * With small number of samples the test might fail to detect obvious non-normality (which will be clearly visible in Q-Q plot).
+
+**Anderson-Darling test**
 
 Alternatively, we can use Anderson-Darling test. It's often preferred over Shapiro-Wilk when you care about the tails of the distribution.
 
 It's more sensitive to:
 
-* outliers
-* heavy tails
-* tail deviations
+* Outliers
+* Heavy tails
+* Tail deviations
 
-Other tests:
+This is especially relevant in applications where extreme values are important e.g.:
 
-* D'Agostino-Pearson Normality Test
+* Fraud Detection
+* Anomaly detection
 
-> It checks if:
-> 
+In those cases extreme values are more important than the central values.
+
+Also, Anderson-Darling test can be used to detect various distributions, not just the normal distribution.
+
+It can assess fit to:
+
+* Normal
+* Exponential
+* Weibull
+* Logistic
+* Gumbel
+
+**D'Agostino-Pearson normality test**
+
+It checks if:
+
 > skewness ≈ 0  
 > kurtosis ≈ 3
 
 Generally, checking `skewness` and `kurtosis` of data is also useful.
+
+It works best for moderate to large sample sizes and is often used when Shapiro-Wilk becomes overly sensitive or computationally less suitable for very large datasets.
 
 **RULE OF THUMB**
 
@@ -132,14 +154,22 @@ Generally, checking `skewness` and `kurtosis` of data is also useful.
 
 > Samples < 5000
 
-* QQ plot
-* D'Agostino-Pearson
+* Q-Q plot
+* Shapiro-Wilk or D'Agostino-Pearson
+
+If tail behaviour is especially important:
+
+* Anderson-Darling
 
 > Samples > 5000
 
-Don't obsess with normality.
+* Q-Q plot
+* Skewness and kurtosis
+* Focus on practical significance rather than formal normality tests
 
-With enough observations, almost every dataset will fail a significance test as tests become hyper sensitive to tiny devations from the normality.
+**❗Note:** Don't obsess with normality.
+
+With enough observations, almost every dataset will fail a significance test as tests become hyper sensitive to tiny deviations from the normality.
 
 That's why it's important to combine statistical test with visual confirmation and eventually make a judgement call.
 
@@ -147,7 +177,10 @@ Instead:
 
 * inspect Q-Q plot
 * inspect skewness/kurtosis
-* decide whether deviations are practically important
+
+And then:
+
+>> Decide whether deviations are practically important❗
 
 Also many parametric tests are fairly robust to moderate departures from normality. E.g. for t-tests or ANOVA:
 
