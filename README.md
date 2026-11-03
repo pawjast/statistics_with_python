@@ -105,11 +105,21 @@ The common ways to check the normality of data are:
 
 **Shapiro-Wilk test**
 
+* Test statistics: `W`
+  * `W` ranges between `0` and `1`
+  * `W = 1`: data fits normal distribution
+  * `W = 0`: data deviates from normal distribution significantly
+
+* It works only with continous data and to detect normality of data
 * With small number of samples the test might fail to detect obvious non-normality (which will be clearly visible in Q-Q plot).
 
 **Anderson-Darling test**
 
 Alternatively, we can use Anderson-Darling test. It's often preferred over Shapiro-Wilk when you care about the tails of the distribution.
+
+* Test statistics: `A^2`
+  * `low A^2`: data fits the target distribution
+  * `high A^2`: data deviates from the target distribution
 
 It's more sensitive to:
 
