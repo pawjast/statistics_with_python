@@ -79,6 +79,22 @@ It's often an iterative process bewtween exploring the data, checking assumption
 
 ## Glossary
 
+### Significance level (alpha)
+
+Alpha is the probability of rejecting the null hypothesis when it is actually true.
+
+Alpha is a probability of commiting Type I error (false positive).
+
+Typical values:
+* `0.01` (1%)
+* `0.05` (5%)
+* `0.10` (10%)
+
+**Interpretation**
+
+I accept 5% chance I might reject the null hypothesis when it's true.
+
+
 ### Hypothesis test
 
 The hypothesis test generally asks:
