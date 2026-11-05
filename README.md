@@ -77,6 +77,40 @@ It's often an iterative process bewtween exploring the data, checking assumption
 #### 8. Interpret results.
 
 
+## Glossary
+
+### Hypothesis test
+
+The hypothesis test generally asks:
+
+> "If the null hypothesis were true, how surprising would my observed data be?"
+
+The process is always:
+
+* State hypotheses
+* Calculate a test statistic from the sample
+* Determine how unusual that statistic is under H₀
+* Convert that into a p-value (or compare with a critical value)
+* Reject or fail to reject H₀
+
+
+### Statistical power
+
+Statistial power is the probability that your test will correctly detect a real effect when one actually exists.
+
+In other words, it is the likelihood of rejecting the null hypothesis (saying "yes, there is an effect") when the null hypothesis is genuinely false.
+
+
+## A/B test
+
+WIP
+
+
+## Bootstrapping
+
+WIP
+
+
 ## Before analysis
 
 ### Checking assumptions of normality of data
@@ -200,3 +234,60 @@ n < 20     ->  normality matters a lot
   > 50     ->  usually not a major concern
   > 100    ->  often largely irrelevant
 ```
+
+
+## Test types
+
+### One sample t-test
+
+**Application**
+
+Used when you have a single sample of independent observations on a continuous variable and want to determine whether the population mean differs from a known or hypothesized value.
+
+**Assumptions**
+
+* The variable being measured should be continuous (or approximately continuous).
+* The population should be approximately normally distributed, particularly for small sample sizes.
+* Observations MUST be independent
+  * ✅ 5 different parts measured
+  * ❌ the same part measured 5 times
+* Minimum 2 observations required (but the statitical power is going to be very low)
+
+**Test statistics**
+
+$$
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+$$
+
+Where:
+
+* $\bar{x}$: sample mean
+* $\mu_0$: Hypothesized population mean under $H_0$
+* $s$: sample standard deviation
+* $n$: sample size
+* $t$: test statistic
+
+The *t-statistic* is compared against a Student's t-distribution with degrees of freedom: $df = n - 1$.
+
+**Test workflow**
+
+* Calculate test statistics: `t`
+* Calculate the critical value from Student's t-distribution using `alpha`, `n` (actually `df`) and whether the test is one sided or two sided
+* compare `t` vs `critical value`
+  * Two-sided test: reject H₀ if $|t| > t_{critical}$
+  * Right-tailed test: reject H₀ if $t > t_{critical}$
+  * Left-tailed test: reject H₀ if $t < -t_{critical}$
+
+Or:
+
+* Calculate `p-value` for the obtained test statistics: `t`
+* Compare `p-value` with `alpha`:
+* if $p_{value} < α$ then reject H₀ 
+
+
+**Examples**
+
+* Check if this school's average score different from the national average of 70?
+* Check if the average load time for a new page differs from a historic value of 2s?
+* Check if the fuel consuption differs from the average of 45MPG as advertised by the manufacturer?
+* Check if the battery life time is indeed 1000hrs as per manufacturer's claim?
