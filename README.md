@@ -158,8 +158,7 @@ It can be generalized that test statistics describes:
 $$
 \text{Test Statistic}
 =
-\frac{\text{Signal}}
-{\text{Noise}}
+\frac{\text{Signal}}{\text{Noise}}
 $$
 
 Where:
