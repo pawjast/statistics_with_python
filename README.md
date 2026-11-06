@@ -150,6 +150,7 @@ The hypothesis formulation involving the t-score asks the question of:
 
 > "How unusual is the observed sample mean $H_0$​ is true??"
 
+
 #### Generalization
 
 It can be generalized that test statistics describes:
@@ -332,7 +333,7 @@ Instead:
 
 And then:
 
->> Decide whether deviations are practically important❗
+> Decide whether deviations are practically important❗
 
 Also many parametric tests are fairly robust to moderate departures from normality. E.g. for t-tests or ANOVA:
 
