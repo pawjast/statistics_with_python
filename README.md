@@ -156,7 +156,7 @@ The hypothesis formulation involving the t-score asks the question of:
 It can be generalized that test statistics describes:
 
 $$
-\text{Test Statistic}
+\text{Test Statistic} = \frac{\text{Signal}}{\text{Noise}}
 $$
 
 Where:
