@@ -110,6 +110,98 @@ The process is always:
 * Reject or fail to reject H₀
 
 
+### Test statistics
+
+They answer a general question of:
+
+> "How many standard-error units away from the null hypothesis value am I?"
+
+For the normal distirbution we've got *z-score*:
+
+$$
+z = \frac{x - \mu}{\sigma}
+$$
+
+And *z-score* of 1 means:
+
+"We're one population standard deviation away from the mean."
+
+Standard deviation is the *standard error unit*.
+
+For a t-distribution, we've got a *t-score*:
+
+$$
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+$$
+
+Here the deviation from the mean is not measured in the units of the standard deviation of the data.
+
+The deviation is measured in the units of the *standard error of the sample mean*:
+
+$$
+SE = \frac{s}{\sqrt{n}}
+$$
+
+And *t-score* of 1 means:
+
+"The sample mean is 1 standard error away from the hypothesized mean."
+
+The hypothesis formulation involving the t-score asks the question of:
+
+> "How unusual is the observed sample mean $H_0$​ is true??"
+
+#### Generalization
+
+It can be generalized that test statistics describes:
+
+$$
+\text{Test Statistic}
+=
+\frac{\text{Signal}}
+{\text{Noise}}
+$$
+
+Where:
+
+* `Signal`: how far your estimate is from what $H_0$​ predicts
+* `Noise`: uncertainty in the estimate
+
+For distributions like normal or t-distribution, this can be written as:
+
+$$
+\text{Test Statistic}
+=
+\frac{\text{Estimate} - \text{Null Value}}
+{\text{Estimated Standard Error}}
+$$
+
+But in other cases the formula take slightly different generic form.
+
+F-distribution:
+
+$$
+\text{Test Statistic}
+=
+\frac{\text{Explained variability}}
+{\text{Unexplained variability}}
+$$
+
+Chi-square:
+
+$$
+\text{Test Statistic}
+=
+\sum
+\frac
+{
+(\text{Observed}-\text{Expected})^2
+}
+{
+\text{Expected}
+}
+$$
+
+
 ### Statistical power
 
 Statistial power is the probability that your test will correctly detect a real effect when one actually exists.
