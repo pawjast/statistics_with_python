@@ -148,7 +148,7 @@ And *t-score* of 1 means:
 
 The hypothesis formulation involving the t-score asks the question of:
 
-> "How unusual is the observed sample mean H_0​ is true??"
+> "How unusual is the observed sample mean $H_0$​ is true??"
 
 
 #### Generalization
