@@ -151,14 +151,12 @@ The hypothesis formulation involving the t-score asks the question of:
 > "How unusual is the observed sample mean H_0​ is true??"
 
 
-**Generalization**
+#### Generalization
 
 It can be generalized that test statistics describes:
 
 $$
 \text{Test Statistic}
-=
-\frac{\text{Signal}}{\text{Noise}}
 $$
 
 Where:
