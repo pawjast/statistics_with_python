@@ -167,9 +167,7 @@ Where:
 For distributions like normal or t-distribution, this can be written as:
 
 $$
-\text{Test Statistic}
-=
-\frac{\text{Estimate} - \text{Null Value}}
+\text{Test Statistic} = \frac{\text{Estimate} - \text{Null Value}}
 {\text{Estimated Standard Error}}
 $$
 
@@ -178,19 +176,14 @@ But in other cases the formula take slightly different generic form.
 F-distribution:
 
 $$
-\text{Test Statistic}
-=
-\frac{\text{Explained variability}}
+\text{Test Statistic} = \frac{\text{Explained variability}}
 {\text{Unexplained variability}}
 $$
 
 Chi-square:
 
 $$
-\text{Test Statistic}
-=
-\sum
-\frac
+\text{Test Statistic} = \sum\frac
 {
 (\text{Observed}-\text{Expected})^2
 }
